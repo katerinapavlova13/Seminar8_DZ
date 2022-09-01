@@ -38,7 +38,7 @@ void PrintAMatrix(int[,] matrix)
     }
 }
 
-int[,] array = CreateMatrixRndInt(6, 4, 1, 9);
+int[,] array = CreateMatrixRndInt(6, 3, 1, 9);
 PrintAMatrix(array);
 
 int GetSum(int[,] arrays, int i)
@@ -52,8 +52,10 @@ int GetSum(int[,] arrays, int i)
         return sum;
     }
 }
+
 int minSumRow = 0;
 int sumRow = GetSum(array, 0);
+
 for (int i = 1; i < array.GetLength(0); i++)
 {
     int tempSumLine = GetSum(array, i);
@@ -65,6 +67,4 @@ for (int i = 1; i < array.GetLength(0); i++)
 }
 Console.WriteLine($"Строкa с наименьшей суммой элементов: {minSumRow + 1} => {sumRow}");
 
-//Console.WriteLine($"Cумма элементов каждой строки: ");
-//PrintAMatrix(array);
 

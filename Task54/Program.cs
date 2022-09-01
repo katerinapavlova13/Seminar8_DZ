@@ -34,8 +34,8 @@ void PrintMatrix(int[,] matrix)
         Console.Write("[");
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            if (j < matrix.GetLength(1) - 1) System.Console.Write($"{matrix[i, j],4},");
-            else Console.Write($"{matrix[i, j],4}");
+            if (j < matrix.GetLength(1) - 1) System.Console.Write($"{matrix[i, j],2},");
+            else Console.Write($"{matrix[i, j],2}");
         }
         Console.WriteLine("]");
     }
@@ -94,10 +94,7 @@ int Colums()
 }
 
 int row = Rows();
-
 int colum = Colums();
-int[,] arrays = CreateMtrixRndInt(row, colum, 1, 99);
-PrintMatrix(arrays);
 
 void GetSortet(int[,] matrix)
 {
@@ -117,9 +114,13 @@ void GetSortet(int[,] matrix)
         }
     }
 }
+
+int[,] arrays = CreateMtrixRndInt(row, colum, 0, 9);
+PrintMatrix(arrays);
 Console.WriteLine();
 GetSortet(arrays);
 PrintMatrix(arrays);
+
 
 
 

@@ -53,7 +53,6 @@ int[,] CreateMatrixRndInt2(int row2, int col2, int min, int max)
     return matrix2;
 }
 
-
 int[,] ResMatrix(int[,] array1, int[,] array2)
 {
     var resMatrix = new int[array1.GetLength(0), array2.GetLength(1)];
@@ -73,7 +72,6 @@ int[,] ResMatrix(int[,] array1, int[,] array2)
     return resMatrix;
 }
 
-
 int[,] array1 = CreateMatrixRndInt1(2, 2, -9, 9);
 PrintAMatrix(array1);
 Console.WriteLine();
@@ -85,6 +83,7 @@ Console.WriteLine();
 int[,] array3 = ResMatrix(array1, array2);
 Console.WriteLine("Произведение двух матриц: ");
 PrintAMatrix(array3);
+
 
 
 
