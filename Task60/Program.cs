@@ -6,6 +6,7 @@
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1)*/
 
+SortedSet<int> set_nums = new SortedSet<int>();
 int[,,] CreateArrayRndInt(int row, int col, int pag)
 {
     int[,,] array = new int[row, col, pag];
@@ -18,12 +19,18 @@ int[,,] CreateArrayRndInt(int row, int col, int pag)
             for (int k = 0; k < array.GetLength(2); k++)
             {
                 array[i, j, k] = rnd.Next(10, 99);
+
+                while (set_nums.Contains(array[i, j, k]))
+                {
+                    array[i, j, k] = rnd.Next(10, 99);
+                }
+                set_nums.Add(array[i, j, k]);
             }
         }
+
     }
     return array;
 }
-
 
 void PrintMatrix(int[,,] matrix)
 {
@@ -37,7 +44,6 @@ void PrintMatrix(int[,,] matrix)
                 if (k < matrix.GetLength(2) - 1) Console.Write($"{matrix[i, j, k]} {(i, j, k),3} ");
                 else Console.Write($"{matrix[i, j, k]} {(i, j, k),3}");
             }
-
         }
     }
 }

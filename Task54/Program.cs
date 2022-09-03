@@ -41,61 +41,6 @@ void PrintMatrix(int[,] matrix)
     }
 }
 
-int Rows()
-{
-    while (true)
-    {
-        try
-        {
-            Console.Write("Введите количество строк: ");
-            int mTmp = int.Parse(Console.ReadLine());
-
-            if (mTmp <= 0)
-            {
-                Console.WriteLine("Пожалуйста, введите значение больше нуля!");
-                Console.WriteLine();
-                continue;
-            }
-            else return mTmp;
-        }
-        catch
-        {
-            Console.WriteLine("Ошибка! Некорректный формат! Повторите попытку!");
-            Console.WriteLine();
-            continue;
-        }
-    }
-}
-
-int Colums()
-{
-    while (true)
-    {
-        try
-        {
-            Console.Write("Введите количество столбцов: ");
-            int nTmp = int.Parse(Console.ReadLine());
-
-            if (nTmp <= 0)
-            {
-                Console.WriteLine("Пожалуйста, введите значение больше нуля!");
-                Console.WriteLine();
-                continue;
-            }
-            else return nTmp;
-        }
-        catch
-        {
-            Console.WriteLine("Ошибка! Некорректный формат! Повторите попытку!");
-            Console.WriteLine();
-            continue;
-        }
-    }
-}
-
-int row = Rows();
-int colum = Colums();
-
 void GetSortet(int[,] matrix)
 {
     for (int i = 0; i < matrix.GetLength(0); i++)
@@ -115,7 +60,7 @@ void GetSortet(int[,] matrix)
     }
 }
 
-int[,] arrays = CreateMtrixRndInt(row, colum, 0, 9);
+int[,] arrays = CreateMtrixRndInt(4, 4, 0, 9);
 PrintMatrix(arrays);
 Console.WriteLine();
 GetSortet(arrays);
